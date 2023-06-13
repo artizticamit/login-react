@@ -15,13 +15,14 @@ export const authReducer = (state, action)=>{
 
 export const AuthContextProvider = ({children})=>{
     const [state, dispatch] = useReducer(authReducer, {
-        user:null
+        user:null,
     })
 
     useEffect(()=>{
         const user = JSON.parse(localStorage.getItem('user'))
 
         if(user){
+            // dispatch({type:'LOGIN_START'})
             dispatch({type:'LOGIN', payload:user})
         }
     },[])

@@ -11,6 +11,7 @@ dotenv.config()
 
 const PORT = process.env.PORT || 8000
 const AuthRoute = require('./routes/auth')
+const postRoute = require('./routes/post')
 
 // Connect to DB
 const MONGO_URL = process.env.MONGO_URL
@@ -28,6 +29,7 @@ app.use(morgan('common'))
 app.use(cookieParser())
 
 app.use('/api/auth',AuthRoute)
+app.use('/api/post', postRoute)
 
 // app.get('/', (req, res)=>{
 //     res.send('Hello World')

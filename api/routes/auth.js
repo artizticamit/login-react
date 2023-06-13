@@ -90,4 +90,15 @@ router.post('/login', async (req, res)=>{
     }
 })
 
+router.get('/user', async (req, res)=>{
+    try{
+        const email = req.body.email;
+        const userId = await User.findOne({email:email});
+        res.status(200).json({userId:userId._id})
+    }catch(err)
+    {
+        res.status(400).json(err)
+    }
+})
+
 module.exports = router;

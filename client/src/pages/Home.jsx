@@ -24,6 +24,12 @@ export default function Home() {
         <button type="submit" onClick={handleClick}>logout</button>
       </div>
       }
+      <div className="posts">
+      <a href="/posts">
+        posts
+      </a>
+        
+      </div>
       {!user &&
         <>
           <div className="login">

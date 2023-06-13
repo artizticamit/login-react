@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom';
 import { useEffect,useState } from 'react';
+import Posts from './pages/Posts';
 
 function App() {
 
@@ -39,8 +40,12 @@ function App() {
             user ? <Navigate to='/'/> :<Login />
           }/>
           <Route exact path='/register' element={
-            <Register />
+            user ? <Navigate to='/' /> :<Register />
           }/>
+          <Route exact path='/posts' element={
+            <Posts />
+          }
+          />
            
         </Routes>
       </Router>
