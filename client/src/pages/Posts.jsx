@@ -11,7 +11,7 @@ export default function Posts() {
         const fetchPosts = async ()=>{
             if(user)
             {
-                const response = user && await axios.get('/api/post/'+user.email+'/timeline', {
+                const response = user && await axios.get('https://login-backend-tejc.onrender.com/api/post/'+user.email+'/timeline', {
                   headers:{
                     'Authorization': `Bearer ${user.token}`
                   }

@@ -14,7 +14,7 @@ export const useLogin = ()=>{
         setError(null);
         try{
 
-            const response = await axios.post('/api/auth/login', {email:email, password:password})
+            const response = await axios.post('https://login-backend-tejc.onrender.com/api/auth/login', {email:email, password:password})
             console.log(response.data);
             setIsLoading(false);
             localStorage.setItem('user', JSON.stringify(response.data))
